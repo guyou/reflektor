@@ -73,6 +73,7 @@ void	mirror_send_event	(Mirror *m, VEvent *vh) {
 	}
 	print_hex(buf,ofs);
 	fwrite(buf,1,ofs,m->fd);
+	fflush(m->fd);
 }
 
 VEvent*	mirror_get_event	(Mirror *m) {
