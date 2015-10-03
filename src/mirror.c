@@ -59,10 +59,9 @@ void	mirror_send_event	(Mirror *m, VEvent *vh) {
 	msgid			=	htons(vh->msgid);
 	len				=	vh->len;
 
-	buf	=	calloc(1+sizeof(cmd)+sizeof(msgid)+sizeof(len)+len,							1);
+	buf	=	calloc(sizeof(cmd)+sizeof(msgid)+sizeof(len)+len,							1);
 
-	buf[0]			=	0x01;
-	ofs			=	1;
+	ofs			=	0;
 	bcopy(&cmd,buf+ofs,sizeof(cmd));
 	ofs				+=	sizeof(cmd);
 	bcopy(&msgid,buf+ofs,sizeof(msgid));
