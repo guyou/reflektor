@@ -135,6 +135,13 @@ void	mirror_getfwv (Mirror *m) {
 	vevent_destroy(id);
 }
 
+void	mirror_getorient (Mirror *m) {
+	VEvent	*id			=	vevent_build(V_GET_ORIENTATION,
+								m->msgid++,0,NULL);
+	mirror_send_event(m,id);
+	vevent_destroy(id);
+}
+
 void	mirror_getblv (Mirror *m) {
 	VEvent	*id			=	vevent_build(V_GET_BOOTLOADERVERSION,
 								m->msgid++,0,NULL);
