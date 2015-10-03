@@ -1,0 +1,20 @@
+reflek:tor is alternate automation software for use with the Violet
+mir:ror consumer RFID reader. It replaces, for Linux systems, Violet's
+own mirware.
+
+Please keep in mind that reflek:tor is still alpha software: this
+release is intended for developers and advanced end users, and as
+such, may have bugs and vagaries of use which may take some getting used
+to. Better than getting used to them, why not let me know (see AUTHORS)
+so I can fix them for the next release?
+
+How to Use reflek:tor
+1. $> ./configure && make && sudo make install
+2. Plug in mir:ror.
+3. $> reflektor
+4. Scan a tag or two. It'll leave both "show" and "hide" events in
+	.reflektor_do in your HOME directory. You can modify the portion
+	after the colon to whatever you will. I recommend creating a
+	${HOME}/bin/violet directory and storing scripts there, to avoid
+	having anything terribly complex in .reflektor_do.
+5. Scan tags you've created scripted actions for, and watch the magic!

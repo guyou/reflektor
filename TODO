@@ -1,0 +1,35 @@
+TODO
+1 Make all functions endian-safe
+	a few problems with manual byte-placement in mirror_get_event()
+? Abstract out a generic report(Mirror m,char *msg) function
+2 Abstract out verbose logging
+3 gettext support
+3 check portability
+	port bcopy()
+	unneccessary while still dependent on linux hidraw
+2 in report_tag deal with too-long ids better
+2 smooth over suid root and privilege drop
+	should this really happen automagically in mirror_open? I think not.
+2 autotoolize better
+1 libtoolize
+	libreflektor is a MAJOR goal
+1 vevent.c and vevent.h -- vevent struct is private, and only
+	functions which read or modify it are exposed.
+3 mirror_print() -- mostly so it's there
+1 fix mirror device discovery
+	Bug: won't find a hotplugged mirror
+3 multiple mirror support in the library
+	Mostly there already . . . this should be a host app problem
+2 should reflek:tor itself support multiple mirrors?
+	multiple mirrors equals very yes
+2 msgid management
+	should the mirror struct itself really store this?
+	not so much a problem without a host app that needs to send lots of msgs
+3 config/db file directory
+	${HOME}/.reflektor_do should be good enough for most purposes, but
+	what about systemwide use?
+2 Bug: Why does the second message sent to the mirror always segfault?
+	Something change with the fh?
+3 Free reflektor from reflektor_do.
+	It's much cleaner to manage the actions themselves without the
+	nurse script.
