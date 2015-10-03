@@ -168,6 +168,9 @@ Mirror *	mirror_open (char *path) {
 	m->path		=	path;
 	m->fd		=	fh;
 	mirror_getid(m);
+	mirror_getfwv(m);
+	mirror_getblv(m);
+	mirror_getorient(m);
 	return m;
 }
 
