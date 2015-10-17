@@ -59,7 +59,7 @@ void	mirror_send_event	(Mirror *m, VEvent *vh) {
 	msgid			=	htons(vh->msgid);
 	len				=	vh->len;
 
-	buf	=	calloc(sizeof(cmd)+sizeof(msgid)+sizeof(len)+len,							1);
+	buf	=	malloc(sizeof(cmd)+sizeof(msgid)+sizeof(len)+len);
 
 	ofs			=	0;
 	bcopy(&cmd,buf+ofs,sizeof(cmd));
@@ -74,6 +74,8 @@ void	mirror_send_event	(Mirror *m, VEvent *vh) {
 	print_hex(buf,ofs);
 	fwrite(buf,1,ofs,m->fd);
 	fflush(m->fd);
+
+	free(buf);
 }
 
 VEvent*	mirror_get_event	(Mirror *m) {
