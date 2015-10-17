@@ -23,6 +23,12 @@ bin_SUIDS = reflektor
 reflektor_SOURCES = reflektor.c reflektor.h mirror.c mirror.h \
 	private.h vevent.c vevent.h util.c util.h discover.c discover.h
 
+bin_PROGRAMS = reflektor_shell
+bin_SUIDS = reflektor_shell
+
+reflektor_shell_SOURCES = reflektor_shell.c reflektor.h mirror.c mirror.h \
+	private.h vevent.c vevent.h util.c util.h discover.c discover.h
+
 install-suid-programs:
 	@foo='$(bin_SUIDS)'; \
 	for file in $$foo; do \
