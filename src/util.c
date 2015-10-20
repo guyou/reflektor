@@ -15,6 +15,8 @@
     along with reflek:tor.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#include <sys/types.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "util.h"
